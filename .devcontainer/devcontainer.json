@@ -3,6 +3,7 @@
 {
 	"name": "Anaconda with dependencies",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "lcas.lincoln.ac.uk/devcontainer/pareto-optimal-student-supervisor-allocation:latest",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"context": ".."
