@@ -9,6 +9,24 @@ This project is a package for student to supervisor allocation, a variant of the
 
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
+
+## Run in docker container
+
+### Option 1: Build the docker image locally
+1. clone this repository: `git clone https://github.com/LCAS/pareto-optimal-student-supervisor-allocation.git`
+1. build the docker image: `docker build -t pareto-optimal-student-supervisor-allocation -f .devcontainer/Dockerfile .`
+1. run the container: `docker run -p 5801:5801 -v .:/app/data --rm -it pareto-optimal-student-supervisor-allocation` (it mounts your local directory under `/app/data` in the container, so you can access the files, e.g. your student and supervisor Excel sheets)
+1. open browser at http://localhost:5801/ and connect to the virtual desktop
+1. work on the app as usual (find your local files under `data/`)
+1. closing the app will stop and remove the container
+
+### Option 2: Use image from registry
+1. you need access to the L-CAS registry, login with `docker login lcas.lincoln.ac.uk` (you need credentials, if you don't have them, this is not for you)
+1. run the container: `docker run -p 8501:8501 -v .:/app/data --rm -it lcas.lincoln.ac.uk/devcontainer/pareto-optimal-student-supervisor-allocation:latest` (it mounts your local directory under `/app/data` in the container, so you can access the files, e.g. your student and supervisor Excel sheets)
+1. open browser at http://localhost:5801/ and connect to the virtual desktop
+1. work on the app as usual (find your local files under `data/`)
+1. closing the app will stop and remove the container
+
 ## Paper Publication
 
 Applied Soft Computing Journal 2018.
