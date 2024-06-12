@@ -9,13 +9,19 @@
 	},
 	"features": {
 		"ghcr.io/devcontainers/features/desktop-lite:1": {}
-	}
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [6080],
+	"portsAttributes": {
+		"6080": {
+			"label": "desktop",
+			"onAutoForward": "notify"
+		}
+	}
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "uname -a",

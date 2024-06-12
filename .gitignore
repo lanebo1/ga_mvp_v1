@@ -16,4 +16,4 @@ tcl86t.dll
 tk86t.dll
 .venv
 __pycache__
-
+*.xlsx

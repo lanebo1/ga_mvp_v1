@@ -18,5 +18,6 @@ tk86t.dll
 __pycache__
 FinalProduct
 .github
-
+.devcontainer
+*.xlsx
 

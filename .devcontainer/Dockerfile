@@ -4,6 +4,8 @@ RUN conda create -y --name py36 python=3.6
 RUN conda config --add channels conda-forge && conda config --set channel_priority strict
 COPY pystsup/requirements.txt /tmp/requirements.txt
 RUN conda install -n py36 -y -v --file /tmp/requirements.txt
+RUN conda uninstall -y -n py36 pyomo
+RUN conda run -n py36 pip install pyomo pygmo==2.11.3
 
 #SHELL ["conda", "run", "-n", "py36", "/bin/bash", "-c"]
 

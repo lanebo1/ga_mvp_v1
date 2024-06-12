@@ -1,0 +1,6 @@
+Theme 1 - Domain generalisation for plant/weed detection
+Theme 2 - LLM based state-machine (function calling) for planning robot actions
+Theme 3 - Responsible adoption
+Theme 4 - Ground navigation/SLAM for creating week/plant maps
+Theme 5 - (Inter-)active perception
+Theme 6 - Phenotyping perception beyond 2D colour
