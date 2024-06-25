@@ -7,7 +7,7 @@ RUN conda install -n py36 -y -v --file /tmp/requirements.txt
 RUN conda uninstall -y -n py36 pyomo
 RUN conda run -n py36 pip install pyomo pygmo==2.11.3
 
-#SHELL ["conda", "run", "-n", "py36", "/bin/bash", "-c"]
+RUN conda run -n py36 pip install pygmo
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -y install xfce4-session xfce4-panel xfce4-terminal xfce4-goodies thunar xterm x11-utils screen
@@ -30,25 +30,8 @@ RUN mkdir -p /usr/local/novnc && \
 
 COPY . /app
 WORKDIR /app
+RUN ["chmod", "+x", "/app/entrypoint.sh"]
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 EXPOSE 5801
 
 CMD python GUI_Application.py
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends \
-#     python3-pip \
-#     libboost-all-dev \
-#     cmake \
-#     && apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# RUN git clone https://github.com/esa/pagmo.git \
-#     && cd pagmo \
-#     && mkdir build \
-#     && cd build \
-#     && cmake .. \
-#     && make -j4 \
-#     && make install
-
-# COPY requirements.txt /tmp/requirements.txt
-# RUN pip3 install --no-cache-dir -r /tmp/requirements.txt
-
